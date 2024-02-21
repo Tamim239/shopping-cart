@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <!-- tailwind and daisy ui cnd link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .dynamic-add {
+       display: flex;
+      justify-content: space-between;
+        }
+    </style>
+
+</head>
+
+<body class=" md:w-4/5 mx-auto ">
+    <header class="my-10">
+        <h1 class="text-6xl text-center">Shopping Cart</h1>
+    </header>
+    <main>
+        <section>
+            <div class="grid gap-3 grid-cols-2 md:grid-cols-4">
+                <!-- card 1 -->
+                <div class="card shadow-xl">
+                    <figure><img src="images/juta.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Hil</h2>
+                        <p class="text-2xl">price : <span>60</span> $</p>
+                        <div class="">
+                            <button class="w-full btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="card shadow-xl">
+                    <figure><img src="images/watch.jpg" alt="watch" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Watch</h2>
+                        <p class="text-2xl">price :<span>95</span> $</p>
+                        <div class="">
+                            <button class="w-full btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="card shadow-xl">
+                    <figure><img src="images/pant.jpg" alt="pant" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Pant</h2>
+                        <p class="text-2xl">price : <span>40</span> $</p>
+                        <div class="">
+                            <button class="w-full btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 4 -->
+                <div class="card shadow-xl">
+                    <figure><img src="images/mobile.jpg" alt="mobile" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Hil</h2>
+                        <p class="text-2xl">price : <span>95</span> $</p>
+                        <div class="">
+                            <button class="w-full btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 5 -->
+                <div class="card shadow-xl">
+                    <figure><img src="images/Tshirt.jpg" alt="T-shirt" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">T-shirt</h2>
+                        <p class="text-2xl">price : <span>20</span> $</p>
+                        <div class="">
+                            <button class="w-full btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 6 -->
+                <div class="card shadow-xl">
+                    <figure><img src="images/londri.jpg" alt="Machine" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Machine</h2>
+                        <p class="text-2xl">price : <span>50</span> $</p>
+                        <div class="">
+                            <button class="w-full btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 7 -->
+                <div class="card shadow-xl">
+                    <figure><img src="images/shoes.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Shoes</h2>
+                        <p class="text-2xl">price : <span>25</span> $</p>
+                        <div class="">
+                            <button class="w-full btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 8 -->
+                <div class="card shadow-xl">
+                    <figure><img src="images/Sunglass.jpg" alt="Sunglass" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Sun Glass</h2>
+                        <p class="text-2xl">price : <span>36</span> $</p>
+                        <div class="">
+                            <button class="w-full btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- modal -->
+        <section>
+            <!-- You can open the modal using ID.showModal() method -->
+            <button onclick="my_modal_3.showModal()"></button>
+            <dialog id="my_modal_3" class="modal ">
+                <div class="modal-box">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    </form>
+                    <h3 class="font-bold text-lg">Cost list</h3>
+                    <hr>
+                    <div id="displayShow">
+
+                        <!-- dynamic  -->
+                    </div>
+                    <hr>
+                    <h2 class="pb-4">Total Cost : <span id="total-cost">0</span>$</h2>
+                </div> 
+            </dialog>
+        </section>
+    </main>
+
+    <!-- js file setup -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
