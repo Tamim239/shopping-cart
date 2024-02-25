@@ -1,33 +1,39 @@
-// all btn
-const allBtn = document.getElementsByClassName("btn");
-for (const btn of allBtn) {
-    btn.addEventListener("click", function clickBtn(event) {
-         document.getElementById("my_modal_3").showModal();
-         console.log()
-        const name = event.target.parentNode.parentNode.childNodes[1].innerText;
-        const price = event.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
-        const showDisplay = document.getElementById("displayShow");
-        const div = document.createElement("div");
-        div.classList.add("dynamic-add");
-        const p = document.createElement("p");
-        const p2 = document.createElement("p");
-        p.innerText = name;
-        p2.innerText = price + "$";
-        div.appendChild(p);
-        div.appendChild(p2);
-        showDisplay.appendChild(div);
-        
-        const totalCost = getConvertText("total-cost");
-        document.getElementById("total-cost").innerText = totalCost + parseInt(price);
-         showDisplay.addEventListener("click", function(e){
-            e.target.parentNode.removeChild(e.target)
-         })
-    })
+const allBtn = document.getElementsByClassName("btnHandler");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+
+
+
+for(const btn of allBtn){
+  btn.addEventListener("click", function(e){
+  modal.classList.remove("hidden");
+
+  const nameProduct = e.target.parentNode.parentNode.childNodes[1].innerText;
+  const priceProduct = e.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
+console.log()
+
+
+  const outputList = document.getElementById("output");
+  const div = document.createElement("div");
+  div.classList.add("dynamic-add")
+  const p = document.createElement("p");
+  p.innerText = nameProduct;
+  const p2 = document.createElement("p");
+  p2.innerText = `${priceProduct} $`;
+  div.appendChild(p);
+  div.appendChild(p2);
+  outputList.appendChild(div);
+
+  const totalCost = getParseInner("totalCost");
+  document.getElementById("totalCost").innerText = totalCost + parseInt(priceProduct);
+ 
+ 
+  })
 }
 
-// convert function
-function getConvertText(elements){
-   const element = document.getElementById(elements).innerText;
-   const convertElement = parseInt(element);
-   return convertElement;
-}
+// close modal
+closeModal.addEventListener("click", (e) => {
+   modal.classList.add("hidden");
+   
+})
+
