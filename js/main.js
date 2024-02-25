@@ -34,6 +34,8 @@ console.log()
 // close modal
 closeModal.addEventListener("click", (e) => {
    modal.classList.add("hidden");
-   
+   const outputList = document.getElementById("output");
+  outputList.innerText = "";
+  document.getElementById("totalCost").innerText = 0;
 })
 
